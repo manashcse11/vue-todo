@@ -1,13 +1,16 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <ul>
-      <li v-for="(todo, index) in todos" :key="index">{{todo.description}}</li>
+    <ul class="list-group">
+      <Todo v-for="(todo, index) in todos" :key="index" :description="todo.description"/>
+      <!-- <li v-for="(todo, index) in todos" :key="index">{{todo.description}}</li> -->
     </ul>
   </div>
 </template>
 
 <script>
+import Todo from './Todo';
+
 export default {
   name: 'TodoList',
   props: {
@@ -21,6 +24,9 @@ export default {
         { description: "Finish doing laundry", completed: false },
       ],
     };
+  }
+  , components: {
+    Todo
   }
 }
 </script>
