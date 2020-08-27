@@ -1,16 +1,14 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <ul class="list-group">
-      <Todo v-for="(todo, index) in todos" :key="index" :description="todo.description"/>
-      <!-- <li v-for="(todo, index) in todos" :key="index">{{todo.description}}</li> -->
-    </ul>
+  <div>
+    <h3 class="md-display-3">{{ msg }}</h3>
+    <Todo v-for="(todo, index) in todos" :key="index" :description="todo.description"/>
   </div>
 </template>
 
-<script>
-import Todo from './Todo';
 
+<script>
+
+import Todo from './Todo';
 export default {
   name: 'TodoList',
   props: {
@@ -33,18 +31,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+  /* .md-card {
+      margin-top: 16px;
+  } */
 </style>
