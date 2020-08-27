@@ -1,11 +1,5 @@
 <template>
-    <md-card class="md-primary" md-theme="purple-card" md-with-hover>
-      <md-ripple>
-        <md-card-header>
-          <div class="md-title">{{ description }}</div>
-        </md-card-header>
-      </md-ripple>
-    </md-card>
+    <md-list-item>{{ description }}</md-list-item>
 </template>
 
 <script>
@@ -18,7 +12,4 @@ export default {
 </script>
 
 <style scoped>
-    .md-card {
-      margin-top: 16px;
-    }
 </style>
