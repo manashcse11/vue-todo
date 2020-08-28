@@ -5,7 +5,7 @@
       <CreateTodo @on-todo="addTodo($event)" />
     </div>
     <md-list>
-      <Todo v-for="(todo, index) in todos" :key="index" :description="todo.description"/>
+      <Todo v-for="(todo, index) in todos" :key="index" :description="todo.description" :completed="todo.completed" @on-toggle="toggleTodo(todo)"/>
     </md-list>
   </div>
 </template>
@@ -31,6 +31,10 @@ export default {
   , methods: {
     addTodo(todo){
       this.todos.push({description: todo, completed: false});
+    }
+    , toggleTodo(todo){
+      todo.completed = !todo.completed;
+      console.log(this.todos);
     }
   }
   , components: {
