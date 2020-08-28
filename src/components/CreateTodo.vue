@@ -1,6 +1,8 @@
 <template>
     <form @submit.prevent="addTodo()">
-        <input v-model="todo" type="text" placeholder="Create a new todo...">
+        <md-field md-inline>
+            <md-input v-model="todo" type="text" placeholder="Create a new todo..."></md-input>
+        </md-field>
     </form>
 </template>
 
@@ -24,5 +26,8 @@ export default {
 </script>
 
 <style scoped>
-
+.md-field{
+    width: 800px;
+    margin: 0px auto;
+}
 </style>
