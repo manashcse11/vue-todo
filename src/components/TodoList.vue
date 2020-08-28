@@ -1,6 +1,9 @@
 <template>
   <div>
     <h3 class="md-display-3">{{ msg }}</h3>
+    <div>
+      <CreateTodo @on-todo="addTodo($event)" />
+    </div>
     <md-list>
       <Todo v-for="(todo, index) in todos" :key="index" :description="todo.description"/>
     </md-list>
@@ -9,8 +12,8 @@
 
 
 <script>
-
 import Todo from './Todo';
+import CreateTodo from './CreateTodo';
 export default {
   name: 'TodoList',
   props: {
@@ -25,8 +28,14 @@ export default {
       ],
     };
   }
+  , methods: {
+    addTodo(todo){
+      this.todos.push({description: todo, completed: false});
+    }
+  }
   , components: {
     Todo
+    , CreateTodo
   }
 }
 </script>
