@@ -2,6 +2,11 @@
   <div>
     <h3 class="md-display-3">{{ msg }}</h3>
     <div>
+      <md-button class="md-raised">All</md-button>
+      <md-button class="md-raised">Incomplete</md-button>
+      <md-button class="md-raised">Completed</md-button>
+    </div>
+    <div>
       <CreateTodo @on-todo="addTodo($event)" />
     </div>
     <md-list>
